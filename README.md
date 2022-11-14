@@ -20,3 +20,4 @@ id | Name | Website | Status |
 10 | techbigs | **https://techbigs.com** |✓|
 11 | apktodo | **https://apktodo.com** |✓|
 12 | m.playmods | **https://m.playmods.net** |✓|
+13 | modradar | **https://modradar.net** |✓|
