@@ -8,7 +8,8 @@
 ### Best Premuim | Modded site for Games & Apps
 id | Name | Website | Status |
 -- |:--:|--|:--:|
-1 | apkmody | **https://apkmody.io** | ✓ |
-2 | modcombo | **https://modcombo.com** | ✓ |
-3 | happymod | **https://happymod.com** | ✓ |
-4 | an1 | **https://an1.com** | ✓ |
+1 | apkmody | **https://apkmody.io** |✓|
+2 | modcombo | **https://modcombo.com** |✓|
+3 | happymod | **https://happymod.com** |✓|
+4 | an1 | **https://an1.com** |✓|
+5 | getmodsapk | **https://getmodsapk.com** |✓|
