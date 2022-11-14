@@ -16,3 +16,4 @@ id | Name | Website | Status |
 6 | moddroid | **https://moddroid.co** |✓|
 7 | modyolo | **https://modyolo.com** |✓|
 8 | modded-1 | **https://modded-1.com** |✓|
+9 | techbigs | **https://techbigs.com** |✓|
