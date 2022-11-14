@@ -13,3 +13,6 @@ id | Name | Website | Status |
 3 | happymod | **https://happymod.com** |✓|
 4 | an1 | **https://an1.com** |✓|
 5 | getmodsapk | **https://getmodsapk.com** |✓|
+6 | moddroid | **https://moddroid.co** |✓|
+7 | modyolo | **https://modyolo.com** |✓|
+8 | modded-1 | **https://modded-1.com** |✓|
