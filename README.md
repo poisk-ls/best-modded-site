@@ -19,3 +19,4 @@ id | Name | Website | Status |
 9 | modded-1 | **https://modded-1.com** |✓|
 10 | techbigs | **https://techbigs.com** |✓|
 11 | apktodo | **https://apktodo.com** |✓|
+12 | m.playmods | **https://m.playmods.net** |✓|
