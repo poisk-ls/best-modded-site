@@ -1,3 +1,7 @@
+## Table of contents
+- <a href="#best-premuim--modded-site-for-games--apps" >Modded Link</a>
+- <a href="#shorten-links" >shorten link</a> 
+
 ## best-modded-site
 **- All mod Games and Apk are completely safe and free, so you can download here..**
 
