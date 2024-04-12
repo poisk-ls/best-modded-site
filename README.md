@@ -12,20 +12,20 @@
 ## Best Premuim | Modded site for Games & Apps
 id | Name | Website | Status |
 -- |:--:|--|:--:|
-1 | `apkmody` | **https://apkmody.io** |✔️|
-2 | `modcombo` | **https://modcombo.com** |✔️|
-3 | `happymod` | **https://happymod.com** |✔️|
-4 | `modyolo` | **https://modyolo.com** |✔️|
-5 | `luckymodapk` | **https://www.luckymodapk.com** |✔️|
-6 | `an1` | **https://an1.com** |✔️|
-7 | `getmodsapk` | **https://getmodsapk.com** |✔️|
-8 | `moddroid` | **https://moddroid.co** |✔️|
-9 | `modded-1` | **https://modded-1.com** |✔️|
-10 | `techbigs` | **https://techbigs.com** |✔️|
-11 | `apktodo` | **https://apktodo.com** |✔️|
-12 | `m.playmods` | **https://m.playmods.net** |✔️|
-13 | `modradar` | **https://modradar.net** |✔️|
-14 | `apkmodule` | **https://apkmodule.com** |✔️|
+<sup>1</sup> | `apkmody` | **https://apkmody.io** |✔️|
+<sup>2</sup> | `modcombo` | **https://modcombo.com** |✔️|
+<sup>3</sup> | `happymod` | **https://happymod.com** |✔️|
+<sup>4</sup> | `modyolo` | **https://modyolo.com** |✔️|
+<sup>5</sup> | `luckymodapk` | **https://www.luckymodapk.com** |✔️|
+<sup>6</sup> | `an1` | **https://an1.com** |✔️|
+<sup>7</sup> | `getmodsapk` | **https://getmodsapk.com** |✔️|
+<sup>8</sup> | `moddroid` | **https://moddroid.co** |✔️|
+<sup>9</sup> | `modded-1` | **https://modded-1.com** |✔️|
+<sup>10</sup> | `techbigs` | **https://techbigs.com** |✔️|
+<sup>11</sup> | `apktodo` | **https://apktodo.com** |✔️|
+<sup>12</sup> | `m.playmods` | **https://m.playmods.net** |✔️|
+<sup>13</sup> | `modradar` | **https://modradar.net** |✔️|
+<sup>14</sup> | `apkmodule` | **https://apkmodule.com** |✔️|
 
 #
 
