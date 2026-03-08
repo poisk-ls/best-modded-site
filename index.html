@@ -8,27 +8,26 @@
         <link rel="stylesheet" href="all.min.css" />
         <style>
             .glass-card {
-                background: rgba(15, 23, 42, 0.8);
-                backdrop-filter: blur(12px);
-                border: 1px solid rgba(255, 255, 255, 0.1);
+                background: rgba(15, 23, 42, 0.85);
+                backdrop-filter: blur(14px);
+                border: 1px solid rgba(255, 255, 255, 0.08);
             }
             .hidden-row { display: none; }
-            .status-glow { box-shadow: 0 0 12px rgba(99, 102, 241, 0.3); }
-            .action-icon:hover { transform: scale(1.15); color: #818cf8; }
+            .status-glow { box-shadow: 0 0 10px rgba(99, 102, 241, 0.3); }
         </style>
     </head>
-    <body class="min-h-screen bg-[#0b0f1a] text-slate-200 font-sans p-4 sm:p-6">
+    <body class="min-h-screen bg-[#080c14] text-slate-200 font-sans p-4 sm:p-8">
 
-        <div class="max-w-4xl mx-auto mt-6">
+        <div class="max-w-5xl mx-auto">
             <div class="flex items-center justify-between mb-8 px-2">
                 <div>
-                    <h3 class="font-extrabold text-2xl text-white tracking-tight">Best Modded Sites</h3>
-                    <p class="text-slate-500 text-[10px] uppercase tracking-[0.2em] font-bold mt-1">Global Directory</p>
+                    <h3 class="font-black text-2xl text-white tracking-tight">Best Modded Sites</h3>
+                    <p class="text-slate-500 text-[10px] uppercase font-bold tracking-[0.25em] mt-1">Directory & Forums</p>
                 </div>
                 <button 
                     onclick="toggleRows()" 
                     id="toggleBtn"
-                    class="text-[10px] font-bold uppercase tracking-wider px-4 py-2 bg-slate-800/50 border border-slate-700 rounded-lg hover:bg-indigo-600 hover:border-indigo-500 transition-all text-slate-400 hover:text-white"
+                    class="text-[10px] font-bold uppercase px-4 py-2 bg-slate-800/40 border border-slate-700 rounded-lg hover:bg-indigo-600 hover:text-white transition-all text-slate-400"
                 >
                     See All
                 </button>
@@ -40,153 +39,161 @@
                         <thead>
                             <tr class="bg-slate-800/60">
                                 <th class="px-6 py-5 text-[11px] uppercase font-black text-indigo-400 border-b border-slate-700/50">Site Name</th>
+                                <th class="px-6 py-5 text-[11px] uppercase font-black text-indigo-400 border-b border-slate-700/50">Badge</th>
                                 <th class="px-6 py-5 text-[11px] uppercase font-black text-indigo-400 border-b border-slate-700/50">Rate</th>
                                 <th class="px-6 py-5 text-[11px] uppercase font-black text-indigo-400 border-b border-slate-700/50">Status</th>
                             </tr>
                         </thead>
-                        <tbody id="siteList" class="divide-y divide-slate-800/50">
-                            <tr class="hover:bg-white/[0.03] transition-all group">
+                        <tbody id="directoryTable" class="divide-y divide-slate-800/50">
+                            <tr class="hover:bg-white/[0.02] transition-colors">
                                 <td class="px-6 py-4">
-                                    <div class="flex items-center gap-3">
-                                        <a href="https://an1.com" target="_blank" class="text-sm font-bold text-cyan-400 hover:underline">an1</a>
-                                        <button onclick="window.open('https://an1.com', '_blank')" class="action-icon text-slate-500 transition-all cursor-pointer">
-                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                                            </svg>
-                                        </button>
+                                    <div class="flex items-center gap-2">
+                                        <a href="https://an1.com" target="_blank" class="text-sm font-bold text-cyan-400 hover:text-cyan-300 transition-colors">an1</a>
+                                        <svg onclick="window.open('https://an1.com', '_blank')" xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5 text-slate-600 hover:text-indigo-400 cursor-pointer transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                                        </svg>
                                     </div>
+                                </td>
+                                <td class="px-6 py-4">
+                                    <span class="px-2 py-1 rounded text-[10px] font-bold bg-slate-700/50 text-slate-300 border border-slate-600/50">Mod Site</span>
                                 </td>
                                 <td class="px-6 py-4 text-sm text-slate-400">10/10</td>
                                 <td class="px-6 py-4">
                                     <div class="flex items-center gap-4">
-                                        <span class="text-[10px] font-black w-8 text-slate-300">100%</span>
-                                        <div class="flex-1 h-2 bg-slate-900 rounded-full overflow-hidden">
+                                        <span class="text-[10px] font-bold w-8 text-slate-300">100%</span>
+                                        <div class="flex-1 h-1.5 bg-slate-900 rounded-full overflow-hidden">
                                             <div class="h-full bg-cyan-500 status-glow" style="width: 100%"></div>
                                         </div>
                                     </div>
                                 </td>
                             </tr>
-                            <tr class="hover:bg-white/[0.03] transition-all group">
+                            <tr class="hover:bg-white/[0.02] transition-colors">
                                 <td class="px-6 py-4">
-                                    <div class="flex items-center gap-3">
-                                        <a href="https://platinmods.com/" target="_blank" class="text-sm font-bold text-amber-400 hover:underline">Platinmods</a>
-                                        <button onclick="window.open('https://platinmods.com/', '_blank')" class="action-icon text-slate-500 transition-all cursor-pointer">
-                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                                            </svg>
-                                        </button>
+                                    <div class="flex items-center gap-2">
+                                        <a href="https://platinmods.com/" target="_blank" class="text-sm font-bold text-amber-400 hover:text-amber-300 transition-colors">Platinmods</a>
+                                        <svg onclick="window.open('https://platinmods.com/', '_blank')" xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5 text-slate-600 hover:text-indigo-400 cursor-pointer transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                                        </svg>
                                     </div>
+                                </td>
+                                <td class="px-6 py-4">
+                                    <span class="px-2 py-1 rounded text-[10px] font-bold bg-indigo-500/10 text-indigo-400 border border-indigo-500/20">Forum</span>
                                 </td>
                                 <td class="px-6 py-4 text-sm text-slate-400">10/10</td>
                                 <td class="px-6 py-4">
                                     <div class="flex items-center gap-4">
-                                        <span class="text-[10px] font-black w-8 text-slate-300">100%</span>
-                                        <div class="flex-1 h-2 bg-slate-900 rounded-full overflow-hidden">
+                                        <span class="text-[10px] font-bold w-8 text-slate-300">100%</span>
+                                        <div class="flex-1 h-1.5 bg-slate-900 rounded-full overflow-hidden">
                                             <div class="h-full bg-amber-500 status-glow" style="width: 100%"></div>
                                         </div>
                                     </div>
                                 </td>
                             </tr>
-                            <tr class="hover:bg-white/[0.03] transition-all group">
+                            <tr class="hover:bg-white/[0.02] transition-colors">
                                 <td class="px-6 py-4">
-                                    <div class="flex items-center gap-3">
-                                        <a href="https://phcorner.org/" target="_blank" class="text-sm font-bold text-blue-400 hover:underline">PHCorner</a>
-                                        <button onclick="window.open('https://phcorner.org/', '_blank')" class="action-icon text-slate-500 transition-all cursor-pointer">
-                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                                            </svg>
-                                        </button>
+                                    <div class="flex items-center gap-2">
+                                        <a href="https://phcorner.org/" target="_blank" class="text-sm font-bold text-blue-400 hover:text-blue-300 transition-colors">PHCorner</a>
+                                        <svg onclick="window.open('https://phcorner.org/', '_blank')" xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5 text-slate-600 hover:text-indigo-400 cursor-pointer transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                                        </svg>
                                     </div>
+                                </td>
+                                <td class="px-6 py-4">
+                                    <span class="px-2 py-1 rounded text-[10px] font-bold bg-indigo-500/10 text-indigo-400 border border-indigo-500/20">Forum</span>
                                 </td>
                                 <td class="px-6 py-4 text-sm text-slate-400">10/10</td>
                                 <td class="px-6 py-4">
                                     <div class="flex items-center gap-4">
-                                        <span class="text-[10px] font-black w-8 text-slate-300">100%</span>
-                                        <div class="flex-1 h-2 bg-slate-900 rounded-full overflow-hidden">
+                                        <span class="text-[10px] font-bold w-8 text-slate-300">100%</span>
+                                        <div class="flex-1 h-1.5 bg-slate-900 rounded-full overflow-hidden">
                                             <div class="h-full bg-blue-500 status-glow" style="width: 100%"></div>
                                         </div>
                                     </div>
                                 </td>
                             </tr>
-                            <tr class="hover:bg-white/[0.03] transition-all group">
+                            <tr class="hover:bg-white/[0.02] transition-colors">
                                 <td class="px-6 py-4">
-                                    <div class="flex items-center gap-3">
-                                        <a href="https://modyolo.com" target="_blank" class="text-sm font-bold text-emerald-400 hover:underline">Modyolo</a>
-                                        <button onclick="window.open('https://modyolo.com', '_blank')" class="action-icon text-slate-500 transition-all cursor-pointer">
-                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                                            </svg>
-                                        </button>
+                                    <div class="flex items-center gap-2">
+                                        <a href="https://modyolo.com" target="_blank" class="text-sm font-bold text-emerald-400 hover:text-emerald-300 transition-colors">Modyolo</a>
+                                        <svg onclick="window.open('https://modyolo.com', '_blank')" xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5 text-slate-600 hover:text-indigo-400 cursor-pointer transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                                        </svg>
                                     </div>
+                                </td>
+                                <td class="px-6 py-4">
+                                    <span class="px-2 py-1 rounded text-[10px] font-bold bg-slate-700/50 text-slate-300 border border-slate-600/50">Mod Site</span>
                                 </td>
                                 <td class="px-6 py-4 text-sm text-slate-400">9/10</td>
                                 <td class="px-6 py-4">
                                     <div class="flex items-center gap-4">
-                                        <span class="text-[10px] font-black w-8 text-slate-300">90%</span>
-                                        <div class="flex-1 h-2 bg-slate-900 rounded-full overflow-hidden">
+                                        <span class="text-[10px] font-bold w-8 text-slate-300">90%</span>
+                                        <div class="flex-1 h-1.5 bg-slate-900 rounded-full overflow-hidden">
                                             <div class="h-full bg-emerald-500" style="width: 90%"></div>
                                         </div>
                                     </div>
                                 </td>
                             </tr>
-                            <tr class="hidden-row hover:bg-white/[0.03] transition-all group">
+                            <tr class="hidden-row hover:bg-white/[0.02] transition-colors">
                                 <td class="px-6 py-4">
-                                    <div class="flex items-center gap-3">
-                                        <a href="https://apkmody.com" target="_blank" class="text-sm font-bold text-indigo-400 hover:underline">Apkmody</a>
-                                        <button onclick="window.open('https://apkmody.com', '_blank')" class="action-icon text-slate-500 transition-all cursor-pointer">
-                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                                            </svg>
-                                        </button>
+                                    <div class="flex items-center gap-2">
+                                        <a href="https://apkmody.com" target="_blank" class="text-sm font-bold text-indigo-400 hover:text-indigo-300 transition-colors">Apkmody</a>
+                                        <svg onclick="window.open('https://apkmody.com', '_blank')" xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5 text-slate-600 hover:text-indigo-400 cursor-pointer transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                                        </svg>
                                     </div>
+                                </td>
+                                <td class="px-6 py-4">
+                                    <span class="px-2 py-1 rounded text-[10px] font-bold bg-slate-700/50 text-slate-300 border border-slate-600/50">Mod Site</span>
                                 </td>
                                 <td class="px-6 py-4 text-sm text-slate-400">8.9/10</td>
                                 <td class="px-6 py-4">
                                     <div class="flex items-center gap-4">
-                                        <span class="text-[10px] font-black w-8 text-slate-300">89%</span>
-                                        <div class="flex-1 h-2 bg-slate-900 rounded-full overflow-hidden">
+                                        <span class="text-[10px] font-bold w-8 text-slate-300">89%</span>
+                                        <div class="flex-1 h-1.5 bg-slate-900 rounded-full overflow-hidden">
                                             <div class="h-full bg-indigo-500" style="width: 89%"></div>
                                         </div>
                                     </div>
                                 </td>
                             </tr>
-                            <tr class="hidden-row hover:bg-white/[0.03] transition-all group">
+                            <tr class="hidden-row hover:bg-white/[0.02] transition-colors">
                                 <td class="px-6 py-4">
-                                    <div class="flex items-center gap-3">
-                                        <a href="https://happymod.com" target="_blank" class="text-sm font-bold text-pink-400 hover:underline">Happymod</a>
-                                        <button onclick="window.open('https://happymod.com', '_blank')" class="action-icon text-slate-500 transition-all cursor-pointer">
-                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                                            </svg>
-                                        </button>
+                                    <div class="flex items-center gap-2">
+                                        <a href="https://happymod.com" target="_blank" class="text-sm font-bold text-pink-400 hover:text-pink-300 transition-colors">Happymod</a>
+                                        <svg onclick="window.open('https://happymod.com', '_blank')" xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5 text-slate-600 hover:text-indigo-400 cursor-pointer transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                                        </svg>
                                     </div>
+                                </td>
+                                <td class="px-6 py-4">
+                                    <span class="px-2 py-1 rounded text-[10px] font-bold bg-slate-700/50 text-slate-300 border border-slate-600/50">Mod Site</span>
                                 </td>
                                 <td class="px-6 py-4 text-sm text-slate-400">8.9/10</td>
                                 <td class="px-6 py-4">
                                     <div class="flex items-center gap-4">
-                                        <span class="text-[10px] font-black w-8 text-slate-300">89%</span>
-                                        <div class="flex-1 h-2 bg-slate-900 rounded-full overflow-hidden">
+                                        <span class="text-[10px] font-bold w-8 text-slate-300">89%</span>
+                                        <div class="flex-1 h-1.5 bg-slate-900 rounded-full overflow-hidden">
                                             <div class="h-full bg-pink-500" style="width: 89%"></div>
                                         </div>
                                     </div>
                                 </td>
                             </tr>
-                            <tr class="hidden-row hover:bg-white/[0.03] transition-all group">
+                            <tr class="hidden-row hover:bg-white/[0.02] transition-colors">
                                 <td class="px-6 py-4">
-                                    <div class="flex items-center gap-3">
-                                        <a href="https://modhello.com" target="_blank" class="text-sm font-bold text-rose-400 hover:underline">Modhello</a>
-                                        <button onclick="window.open('https://modhello.com', '_blank')" class="action-icon text-slate-500 transition-all cursor-pointer">
-                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                                            </svg>
-                                        </button>
+                                    <div class="flex items-center gap-2">
+                                        <a href="https://modhello.com" target="_blank" class="text-sm font-bold text-rose-400 hover:text-rose-300 transition-colors">Modhello</a>
+                                        <svg onclick="window.open('https://modhello.com', '_blank')" xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5 text-slate-600 hover:text-indigo-400 cursor-pointer transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                                        </svg>
                                     </div>
+                                </td>
+                                <td class="px-6 py-4">
+                                    <span class="px-2 py-1 rounded text-[10px] font-bold bg-slate-700/50 text-slate-300 border border-slate-600/50">Mod Site</span>
                                 </td>
                                 <td class="px-6 py-4 text-sm text-slate-400">10/10</td>
                                 <td class="px-6 py-4">
                                     <div class="flex items-center gap-4">
-                                        <span class="text-[10px] font-black w-8 text-slate-300">100%</span>
-                                        <div class="flex-1 h-2 bg-slate-900 rounded-full overflow-hidden">
+                                        <span class="text-[10px] font-bold w-8 text-slate-300">100%</span>
+                                        <div class="flex-1 h-1.5 bg-slate-900 rounded-full overflow-hidden">
                                             <div class="h-full bg-rose-500 status-glow" style="width: 100%"></div>
                                         </div>
                                     </div>
@@ -197,8 +204,8 @@
                 </div>
             </div>
 
-            <footer class="mt-12 py-6 border-t border-slate-800/60 text-center">
-                <p class="text-[10px] text-slate-600 font-black uppercase tracking-[0.3em]">
+            <footer class="mt-12 py-6 border-t border-slate-800/50 text-center">
+                <p class="text-[10px] text-slate-600 font-black uppercase tracking-[0.4em]">
                     &copy; 2026 poisk-ls / Notus JS
                 </p>
             </footer>
