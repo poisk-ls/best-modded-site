@@ -8,173 +8,163 @@
         <link rel="stylesheet" href="all.min.css" />
         <style>
             .glass-card {
-                background: rgba(15, 23, 42, 0.6);
+                background: rgba(15, 23, 42, 0.7);
                 backdrop-filter: blur(12px);
                 border: 1px solid rgba(255, 255, 255, 0.1);
             }
-            .custom-scroll::-webkit-scrollbar { height: 4px; }
-            .custom-scroll::-webkit-scrollbar-thumb { background: #6366f1; border-radius: 10px; }
+            .status-glow {
+                box-shadow: 0 0 8px rgba(34, 211, 238, 0.5);
+                animation: pulse 2s infinite;
+            }
+            @keyframes pulse {
+                0% { opacity: 1; }
+                50% { opacity: 0.7; }
+                100% { opacity: 1; }
+            }
             .hidden-row { display: none; }
         </style>
     </head>
-    <body class="min-h-screen bg-[#0f172a] text-slate-200 font-sans selection:bg-indigo-500/30">
+    <body class="min-h-screen bg-[#0b0f1a] text-slate-200 font-sans p-4 sm:p-8">
 
-        <section class="py-12 px-4 sm:px-6 lg:px-8">
-            <div class="max-w-4xl mx-auto">
-                
-                <div class="flex flex-col sm:flex-row justify-between items-center mb-8 gap-4">
-                    <div>
-                        <h1 class="text-3xl font-extrabold text-white tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-indigo-400 to-cyan-400">
-                            Premium Mod Directories
-                        </h1>
-                        <p class="text-slate-400 text-sm mt-1">Curated list of high-authority modding communities</p>
-                    </div>
-                    <button 
-                        onclick="toggleRows()" 
-                        id="toggleBtn"
-                        class="group relative inline-flex items-center justify-center px-6 py-2.5 font-bold text-white transition-all duration-200 bg-indigo-600 font-pj rounded-xl focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-600 hover:bg-indigo-500 shadow-lg shadow-indigo-500/20"
-                    >
-                        See all
-                    </button>
+        <div class="max-w-5xl mx-auto">
+            <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-10 gap-6">
+                <div>
+                    <h1 class="text-4xl font-black text-white tracking-tight">
+                        Archive <span class="text-indigo-500">Outbound</span>
+                    </h1>
+                    <p class="text-slate-400 font-medium mt-2">Verified Modded Platforms Directory</p>
                 </div>
-
-                <div class="glass-card relative flex flex-col min-w-0 break-words w-full mb-6 shadow-2xl rounded-2xl overflow-hidden">
-                    <div class="block w-full overflow-x-auto custom-scroll">
-                        <table class="items-center w-full border-collapse">
-                            <thead>
-                                <tr class="bg-slate-800/50">
-                                    <th class="px-6 align-middle border-b border-slate-700/50 py-4 text-xs uppercase whitespace-nowrap font-bold text-left text-indigo-400 tracking-wider">
-                                        Site Name
-                                    </th>
-                                    <th class="px-6 align-middle border-b border-slate-700/50 py-4 text-xs uppercase whitespace-nowrap font-bold text-left text-indigo-400 tracking-wider">
-                                        Rating
-                                    </th>
-                                    <th class="px-6 align-middle border-b border-slate-700/50 py-4 text-xs uppercase whitespace-nowrap font-bold text-left text-indigo-400 tracking-wider min-w-[150px]">
-                                        Trust Status
-                                    </th>
-                                </tr>
-                            </thead>
-                            <tbody id="sitesTable" class="divide-y divide-slate-800">
-                                <tr class="hover:bg-white/[0.03] transition-colors duration-150">
-                                    <th class="px-6 align-middle text-sm whitespace-nowrap p-4 text-left">
-                                        <a href="https://an1.com" target="_blank" class="text-cyan-400 hover:text-cyan-300 font-semibold transition-colors flex items-center gap-2">
-                                            <span>an1</span>
-                                            <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
-                                        </a>
-                                    </th>
-                                    <td class="px-6 align-middle text-sm whitespace-nowrap p-4 text-slate-400">10/10</td>
-                                    <td class="px-6 align-middle text-xs whitespace-nowrap p-4">
-                                        <div class="flex items-center gap-3">
-                                            <span class="font-bold text-slate-300 w-8">100%</span>
-                                            <div class="relative w-full h-1.5 bg-slate-700 rounded-full overflow-hidden">
-                                                <div class="h-full bg-cyan-500 rounded-full" style="width: 100%"></div>
-                                            </div>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr class="hover:bg-white/[0.03] transition-colors duration-150">
-                                    <th class="px-6 align-middle text-sm whitespace-nowrap p-4 text-left">
-                                        <a href="https://platinmods.com/" target="_blank" class="text-amber-400 hover:text-amber-300 font-semibold transition-colors flex items-center gap-2">
-                                            Platinmods
-                                        </a>
-                                    </th>
-                                    <td class="px-6 align-middle text-sm whitespace-nowrap p-4 text-slate-400">9.5/10</td>
-                                    <td class="px-6 align-middle text-xs whitespace-nowrap p-4">
-                                        <div class="flex items-center gap-3">
-                                            <span class="font-bold text-slate-300 w-8">95%</span>
-                                            <div class="relative w-full h-1.5 bg-slate-700 rounded-full overflow-hidden">
-                                                <div class="h-full bg-amber-500 rounded-full" style="width: 95%"></div>
-                                            </div>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr class="hover:bg-white/[0.03] transition-colors duration-150">
-                                    <th class="px-6 align-middle text-sm whitespace-nowrap p-4 text-left">
-                                        <a href="https://phcorner.org/" target="_blank" class="text-blue-400 hover:text-blue-300 font-semibold transition-colors flex items-center gap-2">
-                                            PHCorner
-                                        </a>
-                                    </th>
-                                    <td class="px-6 align-middle text-sm whitespace-nowrap p-4 text-slate-400">9.2/10</td>
-                                    <td class="px-6 align-middle text-xs whitespace-nowrap p-4">
-                                        <div class="flex items-center gap-3">
-                                            <span class="font-bold text-slate-300 w-8">92%</span>
-                                            <div class="relative w-full h-1.5 bg-slate-700 rounded-full overflow-hidden">
-                                                <div class="h-full bg-blue-500 rounded-full" style="width: 92%"></div>
-                                            </div>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr class="hover:bg-white/[0.03] transition-colors duration-150">
-                                    <th class="px-6 align-middle text-sm whitespace-nowrap p-4 text-left">
-                                        <a href="https://modyolo.com" target="_blank" class="text-emerald-400 hover:text-emerald-300 font-semibold transition-colors flex items-center gap-2">
-                                            Modyolo
-                                        </a>
-                                    </th>
-                                    <td class="px-6 align-middle text-sm whitespace-nowrap p-4 text-slate-400">9/10</td>
-                                    <td class="px-6 align-middle text-xs whitespace-nowrap p-4">
-                                        <div class="flex items-center gap-3">
-                                            <span class="font-bold text-slate-300 w-8">90%</span>
-                                            <div class="relative w-full h-1.5 bg-slate-700 rounded-full overflow-hidden">
-                                                <div class="h-full bg-emerald-500 rounded-full" style="width: 90%"></div>
-                                            </div>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr class="hover:bg-white/[0.03] transition-colors duration-150">
-                                    <th class="px-6 align-middle text-sm whitespace-nowrap p-4 text-left">
-                                        <a href="https://apkmody.com" target="_blank" class="text-indigo-400 hover:text-indigo-300 font-semibold transition-colors flex items-center gap-2">
-                                            Apkmody
-                                        </a>
-                                    </th>
-                                    <td class="px-6 align-middle text-sm whitespace-nowrap p-4 text-slate-400">8.9/10</td>
-                                    <td class="px-6 align-middle text-xs whitespace-nowrap p-4">
-                                        <div class="flex items-center gap-3">
-                                            <span class="font-bold text-slate-300 w-8">89%</span>
-                                            <div class="relative w-full h-1.5 bg-slate-700 rounded-full overflow-hidden">
-                                                <div class="h-full bg-indigo-500 rounded-full" style="width: 89%"></div>
-                                            </div>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr class="hidden-row hover:bg-white/[0.03] transition-colors duration-150">
-                                    <th class="px-6 align-middle text-sm whitespace-nowrap p-4 text-left font-semibold text-pink-400">Happymod</th>
-                                    <td class="px-6 align-middle text-sm whitespace-nowrap p-4 text-slate-400">8.9/10</td>
-                                    <td class="px-6 align-middle text-xs whitespace-nowrap p-4">
-                                        <div class="flex items-center gap-3"><span class="font-bold text-slate-300 w-8">89%</span>
-                                        <div class="relative w-full h-1.5 bg-slate-700 rounded-full overflow-hidden"><div class="h-full bg-pink-500" style="width: 89%"></div></div></div>
-                                    </td>
-                                </tr>
-                                <tr class="hidden-row hover:bg-white/[0.03] transition-colors duration-150">
-                                    <th class="px-6 align-middle text-sm whitespace-nowrap p-4 text-left font-semibold text-rose-400">Modhello</th>
-                                    <td class="px-6 align-middle text-sm whitespace-nowrap p-4 text-slate-400">10/10</td>
-                                    <td class="px-6 align-middle text-xs whitespace-nowrap p-4">
-                                        <div class="flex items-center gap-3"><span class="font-bold text-slate-300 w-8">100%</span>
-                                        <div class="relative w-full h-1.5 bg-slate-700 rounded-full overflow-hidden"><div class="h-full bg-rose-500" style="width: 100%"></div></div></div>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-
-                <footer class="mt-12 text-center">
-                    <p class="text-slate-500 text-sm font-medium">
-                        &copy; 2026 <span class="text-indigo-400/80">poisk-ls</span> • Enterprise Edition
-                    </p>
-                </footer>
+                <button 
+                    onclick="toggleDirectory()" 
+                    id="actionBtn"
+                    class="w-full md:w-auto px-8 py-3 bg-indigo-600 hover:bg-indigo-500 text-white font-bold rounded-xl shadow-lg shadow-indigo-500/20 transition-all active:scale-95"
+                >
+                    See all sites
+                </button>
             </div>
-        </section>
+
+            <div class="glass-card rounded-2xl overflow-hidden shadow-2xl">
+                <div class="overflow-x-auto">
+                    <table class="w-full text-left border-collapse">
+                        <thead>
+                            <tr class="bg-slate-800/40">
+                                <th class="px-6 py-5 text-xs uppercase font-bold text-indigo-400 tracking-widest border-b border-slate-700">Site Name</th>
+                                <th class="px-6 py-5 text-xs uppercase font-bold text-indigo-400 tracking-widest border-b border-slate-700">Rating</th>
+                                <th class="px-6 py-5 text-xs uppercase font-bold text-indigo-400 tracking-widest border-b border-slate-700">Status</th>
+                            </tr>
+                        </thead>
+                        <tbody id="directoryBody" class="divide-y divide-slate-800/50">
+                            <tr class="hover:bg-white/[0.02] transition-colors">
+                                <td class="px-6 py-4 font-bold text-cyan-400"><a href="https://an1.com" target="_blank">AN1</a></td>
+                                <td class="px-6 py-4 text-slate-400">10/10</td>
+                                <td class="px-6 py-4">
+                                    <div class="flex items-center gap-4">
+                                        <span class="text-xs font-bold w-10">100%</span>
+                                        <div class="flex-1 h-2 bg-slate-700 rounded-full overflow-hidden">
+                                            <div class="h-full bg-cyan-500 status-glow" style="width: 100%"></div>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr class="hover:bg-white/[0.02] transition-colors">
+                                <td class="px-6 py-4 font-bold text-amber-400"><a href="https://platinmods.com/" target="_blank">Platinmods</a></td>
+                                <td class="px-6 py-4 text-slate-400">10/10</td>
+                                <td class="px-6 py-4">
+                                    <div class="flex items-center gap-4">
+                                        <span class="text-xs font-bold w-10">100%</span>
+                                        <div class="flex-1 h-2 bg-slate-700 rounded-full overflow-hidden">
+                                            <div class="h-full bg-amber-500 status-glow" style="width: 100%"></div>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr class="hover:bg-white/[0.02] transition-colors">
+                                <td class="px-6 py-4 font-bold text-blue-400"><a href="https://phcorner.org/" target="_blank">PHCorner</a></td>
+                                <td class="px-6 py-4 text-slate-400">10/10</td>
+                                <td class="px-6 py-4">
+                                    <div class="flex items-center gap-4">
+                                        <span class="text-xs font-bold w-10">100%</span>
+                                        <div class="flex-1 h-2 bg-slate-700 rounded-full overflow-hidden">
+                                            <div class="h-full bg-blue-500 status-glow" style="width: 100%"></div>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr class="hover:bg-white/[0.02] transition-colors">
+                                <td class="px-6 py-4 font-bold text-emerald-400"><a href="https://modyolo.com" target="_blank">Modyolo</a></td>
+                                <td class="px-6 py-4 text-slate-400">9/10</td>
+                                <td class="px-6 py-4">
+                                    <div class="flex items-center gap-4">
+                                        <span class="text-xs font-bold w-10">90%</span>
+                                        <div class="flex-1 h-2 bg-slate-700 rounded-full overflow-hidden">
+                                            <div class="h-full bg-emerald-500" style="width: 90%"></div>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr class="hidden-row hover:bg-white/[0.02] transition-colors">
+                                <td class="px-6 py-4 font-bold text-indigo-400"><a href="https://apkmody.com" target="_blank">Apkmody</a></td>
+                                <td class="px-6 py-4 text-slate-400">8.9/10</td>
+                                <td class="px-6 py-4">
+                                    <div class="flex items-center gap-4">
+                                        <span class="text-xs font-bold w-10">89%</span>
+                                        <div class="flex-1 h-2 bg-slate-700 rounded-full overflow-hidden">
+                                            <div class="h-full bg-indigo-500" style="width: 89%"></div>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr class="hidden-row hover:bg-white/[0.02] transition-colors">
+                                <td class="px-6 py-4 font-bold text-pink-400"><a href="https://happymod.com" target="_blank">Happymod</a></td>
+                                <td class="px-6 py-4 text-slate-400">8.9/10</td>
+                                <td class="px-6 py-4">
+                                    <div class="flex items-center gap-4">
+                                        <span class="text-xs font-bold w-10">89%</span>
+                                        <div class="flex-1 h-2 bg-slate-700 rounded-full overflow-hidden">
+                                            <div class="h-full bg-pink-500" style="width: 89%"></div>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr class="hidden-row hover:bg-white/[0.02] transition-colors">
+                                <td class="px-6 py-4 font-bold text-rose-400"><a href="https://modhello.com" target="_blank">Modhello</a></td>
+                                <td class="px-6 py-4 text-slate-400">10/10</td>
+                                <td class="px-6 py-4">
+                                    <div class="flex items-center gap-4">
+                                        <span class="text-xs font-bold w-10">100%</span>
+                                        <div class="flex-1 h-2 bg-slate-700 rounded-full overflow-hidden">
+                                            <div class="h-full bg-rose-500 status-glow" style="width: 100%"></div>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="mt-8 text-center text-slate-500 text-sm">
+                &copy; 2026 poisk-ls | Developed for Mobile Logistics Workflow
+            </div>
+        </div>
 
         <script>
-            function toggleRows() {
+            function toggleDirectory() {
                 const hiddenRows = document.querySelectorAll('.hidden-row');
-                const btn = document.getElementById('toggleBtn');
-                
+                const btn = document.getElementById('actionBtn');
+                let isHidden = true;
+
                 hiddenRows.forEach(row => {
-                    row.style.display = (row.style.display === 'table-row') ? 'none' : 'table-row';
+                    if (row.style.display === 'table-row') {
+                        row.style.display = 'none';
+                        isHidden = true;
+                    } else {
+                        row.style.display = 'table-row';
+                        isHidden = false;
+                    }
                 });
-                
-                btn.innerText = (btn.innerText === 'See all') ? 'Show less' : 'See all';
+
+                btn.innerText = isHidden ? 'See all sites' : 'Show less';
                 btn.classList.toggle('bg-slate-700');
             }
         </script>
