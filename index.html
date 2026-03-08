@@ -4,38 +4,32 @@
         <meta charset="utf-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link href="https://cdn.tailwindcss.com" rel="stylesheet" />
-    </head>
-    <body
-        class="h-screen overflow-hidden flex items-center justify-center"
-        style="background: #edf2f7"
-    >
-        <link rel="stylesheet" href="tailwind.css" />
+        <script src="https://cdn.tailwindcss.com"></script>
         <link rel="stylesheet" href="all.min.css" />
+        <style>
+            .glass-card {
+                background: rgba(255, 255, 255, 0.05);
+                backdrop-filter: blur(10px);
+                border: 1px solid rgba(255, 255, 255, 0.1);
+            }
+        </style>
+    </head>
+    <body class="min-h-screen bg-slate-900 text-slate-200 font-sans selection:bg-indigo-500 selection:text-white">
 
-        <section class="py-1 bg-blueGray-50">
-            <div class="w-full xl:w-4/12 px-4 mx-auto mt-24">
-                <div
-                    class="relative flex flex-col min-w-0 break-words w-full mb-6 shadow-lg rounded bg-white"
-                >
-                    <div class="rounded-t mb-0 px-4 py-3 border-0">
-                        <div class="flex flex-wrap items-center">
-                            <div
-                                class="relative w-full px-4 max-w-full flex-grow flex-1"
-                            >
-                                <h3
-                                    class="font-semibold text-base text-blueGray-700"
-                                >
-                                    Best Modded Site
+        <section class="py-8 px-4 sm:px-6 lg:px-8">
+            <div class="max-w-4xl mx-auto mt-10 md:mt-20">
+                <div class="glass-card relative flex flex-col min-w-0 break-words w-full mb-8 shadow-2xl rounded-2xl overflow-hidden">
+                    
+                    <div class="rounded-t-2xl mb-0 px-6 py-5 border-b border-slate-700 bg-slate-800/50">
+                        <div class="flex flex-wrap items-center justify-between gap-4">
+                            <div class="relative w-full sm:w-auto flex-grow flex-1">
+                                <h3 class="font-bold text-xl text-white tracking-tight">
+                                    Best Modded Sites
                                 </h3>
+                                <p class="text-slate-400 text-xs mt-1 uppercase tracking-wider">Top Rated Platforms</p>
                             </div>
-                            <div
-                                class="relative w-full px-4 max-w-full flex-grow flex-1 text-right"
-                            >
-                                <button
-                                    class="bg-indigo-500 text-white active:bg-indigo-600 text-xs font-bold uppercase px-3 py-1 rounded outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
-                                    type="button"
-                                >
+                            <div class="relative w-full sm:w-auto text-right">
+                                <button class="bg-indigo-600 hover:bg-indigo-500 text-white active:bg-indigo-700 text-xs font-bold uppercase px-6 py-2.5 rounded-lg shadow hover:shadow-lg outline-none focus:outline-none transition-all duration-200" type="button">
                                     See all
                                 </button>
                             </div>
@@ -43,187 +37,106 @@
                     </div>
 
                     <div class="block w-full overflow-x-auto">
-                        <table
-                            class="items-center w-full border-collapse text-blueGray-700"
-                        >
-                            <thead class="thead-light">
-                                <tr>
-                                    <th
-                                        class="px-6 bg-blueGray-50 text-blueGray-500 align-middle border border-solid border-blueGray-100 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left"
-                                    >
-                                        Site name
+                        <table class="items-center w-full border-collapse">
+                            <thead>
+                                <tr class="bg-slate-800/30">
+                                    <th class="px-6 align-middle border-b border-slate-700 py-4 text-xs uppercase whitespace-nowrap font-bold text-left text-indigo-400">
+                                        Site Name
                                     </th>
-                                    <th
-                                        class="px-6 bg-blueGray-50 text-blueGray-500 align-middle border border-solid border-blueGray-100 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left"
-                                    >
+                                    <th class="px-6 align-middle border-b border-slate-700 py-4 text-xs uppercase whitespace-nowrap font-bold text-left text-indigo-400">
                                         Rate
                                     </th>
-                                    <th
-                                        class="px-6 bg-blueGray-50 text-blueGray-700 align-middle border border-solid border-blueGray-100 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left min-w-140-px"
-                                    ></th>
+                                    <th class="px-6 align-middle border-b border-slate-700 py-4 text-xs uppercase whitespace-nowrap font-bold text-left text-indigo-400 min-w-[140px]">
+                                        Status
+                                    </th>
                                 </tr>
                             </thead>
-                            <tbody>
-                                <tr>
-                                    <th
-                                        class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left"
-                                    >
-                                        <a
-                                            href="https://modyolo.com"
-                                            target="_blank"
-                                            >Modyolo</a
-                                        >
+                            <tbody class="divide-y divide-slate-700/50">
+                                <tr class="hover:bg-white/5 transition-colors duration-150">
+                                    <th class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-sm whitespace-nowrap p-4 text-left">
+                                        <a href="https://modyolo.com" target="_blank" class="text-blue-400 hover:text-blue-300 font-medium transition-colors">Modyolo</a>
                                     </th>
-                                    <td
-                                        class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4"
-                                    >
+                                    <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-sm whitespace-nowrap p-4 text-slate-300">
                                         9/10
                                     </td>
-                                    <td
-                                        class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4"
-                                    >
+                                    <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
                                         <div class="flex items-center">
-                                            <span class="mr-2">9%</span>
-                                            <div class="relative w-full">
-                                                <div
-                                                    class="overflow-hidden h-2 text-xs flex rounded bg-red-200"
-                                                >
-                                                    <div
-                                                        style="width: 90%"
-                                                        class="shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-red-500"
-                                                    ></div>
+                                            <span class="mr-3 font-semibold text-slate-300">90%</span>
+                                            <div class="relative w-full max-w-[100px]">
+                                                <div class="overflow-hidden h-2 flex rounded bg-slate-700">
+                                                    <div style="width: 90%" class="shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-emerald-500"></div>
                                                 </div>
                                             </div>
                                         </div>
                                     </td>
                                 </tr>
-                                <tr>
-                                    <th
-                                        class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left"
-                                    >
-                                        <a
-                                            href="https://apkmody.com"
-                                            target="_blank"
-                                            >Apkmody</a
-                                        >
+                                <tr class="hover:bg-white/5 transition-colors duration-150">
+                                    <th class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-sm whitespace-nowrap p-4 text-left">
+                                        <a href="https://apkmody.com" target="_blank" class="text-blue-400 hover:text-blue-300 font-medium transition-colors">Apkmody</a>
                                     </th>
-                                    <td
-                                        class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4"
-                                    >
+                                    <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-sm whitespace-nowrap p-4 text-slate-300">
                                         8.9/10
                                     </td>
-                                    <td
-                                        class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4"
-                                    >
+                                    <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
                                         <div class="flex items-center">
-                                            <span class="mr-2">8.9%</span>
-                                            <div class="relative w-full">
-                                                <div
-                                                    class="overflow-hidden h-2 text-xs flex rounded bg-purple-200"
-                                                >
-                                                    <div
-                                                        style="width: 85%"
-                                                        class="shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-purple-500"
-                                                    ></div>
+                                            <span class="mr-3 font-semibold text-slate-300">89%</span>
+                                            <div class="relative w-full max-w-[100px]">
+                                                <div class="overflow-hidden h-2 flex rounded bg-slate-700">
+                                                    <div style="width: 89%" class="shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-indigo-500"></div>
                                                 </div>
                                             </div>
                                         </div>
                                     </td>
                                 </tr>
-                                <tr>
-                                    <th
-                                        class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left"
-                                    >
-                                        <a
-                                            href="https://happymod.com"
-                                            target="_blank"
-                                            >Happymod</a
-                                        >
+                                <tr class="hover:bg-white/5 transition-colors duration-150">
+                                    <th class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-sm whitespace-nowrap p-4 text-left">
+                                        <a href="https://happymod.com" target="_blank" class="text-blue-400 hover:text-blue-300 font-medium transition-colors">Happymod</a>
                                     </th>
-                                    <td
-                                        class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4"
-                                    >
-                                        8.9%
+                                    <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-sm whitespace-nowrap p-4 text-slate-300">
+                                        8.9/10
                                     </td>
-                                    <td
-                                        class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4"
-                                    >
+                                    <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
                                         <div class="flex items-center">
-                                            <span class="mr-2">8.9%</span>
-                                            <div class="relative w-full">
-                                                <div
-                                                    class="overflow-hidden h-2 text-xs flex rounded bg-purple-200"
-                                                >
-                                                    <div
-                                                        style="width: 85%"
-                                                        class="shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-pink-500"
-                                                    ></div>
+                                            <span class="mr-3 font-semibold text-slate-300">89%</span>
+                                            <div class="relative w-full max-w-[100px]">
+                                                <div class="overflow-hidden h-2 flex rounded bg-slate-700">
+                                                    <div style="width: 89%" class="shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-pink-500"></div>
                                                 </div>
                                             </div>
                                         </div>
                                     </td>
                                 </tr>
-                                <tr>
-                                    <th
-                                        class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left"
-                                    >
-                                        <a
-                                            href="https://an1.com"
-                                            target="_blank"
-                                            >an1</a
-                                        >
+                                <tr class="hover:bg-white/5 transition-colors duration-150">
+                                    <th class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-sm whitespace-nowrap p-4 text-left">
+                                        <a href="https://an1.com" target="_blank" class="text-blue-400 hover:text-blue-300 font-medium transition-colors">an1</a>
                                     </th>
-                                    <td
-                                        class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4"
-                                    >
+                                    <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-sm whitespace-nowrap p-4 text-slate-300">
                                         10/10
                                     </td>
-                                    <td
-                                        class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4"
-                                    >
+                                    <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
                                         <div class="flex items-center">
-                                            <span class="mr-2">10%</span>
-                                            <div class="relative w-full">
-                                                <div
-                                                    class="overflow-hidden h-2 text-xs flex rounded bg-lightBlue-200"
-                                                >
-                                                    <div
-                                                        style="width: 100%"
-                                                        class="shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-lightBlue-500"
-                                                    ></div>
+                                            <span class="mr-3 font-semibold text-slate-300">100%</span>
+                                            <div class="relative w-full max-w-[100px]">
+                                                <div class="overflow-hidden h-2 flex rounded bg-slate-700">
+                                                    <div style="width: 100%" class="shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-cyan-500"></div>
                                                 </div>
                                             </div>
                                         </div>
                                     </td>
                                 </tr>
-                                <tr>
-                                    <th
-                                        class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left"
-                                    >
-                                        <a
-                                            href="https://modhello.com"
-                                            target="_blank"
-                                            >Modhello</a
-                                        >
+                                <tr class="hover:bg-white/5 transition-colors duration-150 border-b-0">
+                                    <th class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-sm whitespace-nowrap p-4 text-left">
+                                        <a href="https://modhello.com" target="_blank" class="text-blue-400 hover:text-blue-300 font-medium transition-colors">Modhello</a>
                                     </th>
-                                    <td
-                                        class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4"
-                                    >
+                                    <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-sm whitespace-nowrap p-4 text-slate-300">
                                         10/10
                                     </td>
-                                    <td
-                                        class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4"
-                                    >
+                                    <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
                                         <div class="flex items-center">
-                                            <span class="mr-2">10%</span>
-                                            <div class="relative w-full">
-                                                <div
-                                                    class="overflow-hidden h-2 text-xs flex rounded bg-orange-200"
-                                                >
-                                                    <div
-                                                        style="width: 100%"
-                                                        class="shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-red-500"
-                                                    ></div>
+                                            <span class="mr-3 font-semibold text-slate-300">100%</span>
+                                            <div class="relative w-full max-w-[100px]">
+                                                <div class="overflow-hidden h-2 flex rounded bg-slate-700">
+                                                    <div style="width: 100%" class="shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-rose-500"></div>
                                                 </div>
                                             </div>
                                         </div>
@@ -233,27 +146,15 @@
                         </table>
                     </div>
                 </div>
-            </div>
 
-            <footer class="relative pt-8 pb-6 mt-16">
-                <div class="container mx-auto px-4">
-                    <div
-                        class="flex flex-wrap items-center md:justify-between justify-center"
-                    >
-                        <div class="w-full md:w-6/12 px-4 mx-auto text-center">
-                            <div
-                                class="text-sm text-blueGray-500 font-semibold py-1"
-                            >
-                                <a
-                                    href="#"
-                                    class="text-blueGray-500 hover:text-gray-800"
-                                    >© 2024 poisk-ls / Notus JS</a
-                                >
-                            </div>
-                        </div>
+                <footer class="mt-12 py-6 border-t border-slate-800">
+                    <div class="container mx-auto px-4 text-center">
+                        <p class="text-sm text-slate-500 font-medium">
+                            &copy; 2024 <a href="#" class="text-indigo-400 hover:text-indigo-300 transition-colors">poisk-ls</a> / Notus JS
+                        </p>
                     </div>
-                </div>
-            </footer>
+                </footer>
+            </div>
         </section>
     </body>
 </html>
