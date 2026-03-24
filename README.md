@@ -73,5 +73,5 @@ Want to suggest a site?
 
 ---
 <p align="center">
-  <i>Maintained by the Community ❤️ Happy Modding!</i>
+  <i>Maintained by poisk-ls❤️ Happy Modding!</i>
 </p>
