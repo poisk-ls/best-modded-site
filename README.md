@@ -47,19 +47,6 @@ A carefully curated list of the most reliable and high-speed sources for modded 
 
 ---
 
-## 🔗 Shorten Links
-Use these reliable services to shorten your URLs for easy sharing on social media or forums.
-
-| id | Name | Website | Status |
-|:---:|:---|:---|:---:|
-| 1 | `bitly` | [https://bit.ly](https://bit.ly) | ✔️ |
-| 2 | `cutly` | [https://cutt.ly](https://cutt.ly) | ✔️ |
-| 3 | `surl` | [https://surl.li](https://surl.li) | ✔️ |
-| 4 | `tly` | [https://t.ly](https://t.ly) | ✔️ |
-| 5 | `isgd` | [https://is.gd](https://is.gd) | ✔️ |
-| 6 | `tinycc` | [https://tiny.cc](https://tiny.cc) | ✔️ |
-
----
 
 ## 💡 Usage Tips
 1. **Ad-Blocker:** It is highly recommended to use **uBlock Origin** or a private DNS like `dns.adguard.com` when browsing these sites to avoid intrusive pop-ups.
